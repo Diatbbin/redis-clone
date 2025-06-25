@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include "redis_client.h"
+#include "command_handler.h"
 
 class CLI {
 public:
