@@ -1,4 +1,7 @@
+#include "CLI.h"
+
 #include <iostream>
+#include <string>
 
 int main(int argc, char* argv[]) {
     std::string host = "127.0.0.1";
@@ -18,4 +21,10 @@ int main(int argc, char* argv[]) {
         }
         ++i;
     }
+
+    // Handle REPL and one shot command modes
+    CLI cli(host, port);
+    cli.run();
+
+    return 0;
 }
