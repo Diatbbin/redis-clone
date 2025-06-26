@@ -5,6 +5,7 @@
 #include <iostream>
 #include "redis_client.h"
 #include "command_handler.h"
+#include "response_parser.h"
 
 class CLI {
 public:
