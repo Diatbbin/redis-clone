@@ -1,4 +1,4 @@
-#include "include/redis_server.h"
+#include "redis_server.h"
 
 #include <iostream>
 #include <thread>
