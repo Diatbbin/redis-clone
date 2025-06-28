@@ -81,6 +81,7 @@ std::string RedisCommandHandler::processCommand(const std::string& commandLine) 
         if (tokens.size() < 2) {
             response << "-Error: ECHO requires a message\r\n";
         }
+        response << "+" << tokens[1] << "\r\n";
     } else if (cmd == "FLUSHALL") {
         db.flushAll();
         response << "+OK\r\n";
