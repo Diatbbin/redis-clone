@@ -1,28 +1,29 @@
 #Compiler
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -pthread -MMD -MP -O2 -Iinclude
+CXXFLAGS = -Wall -Wextra -std=c++17
 
-SRC_DIR = src
+SRC_DIR = redis-cli
 BUILD_DIR = build
+BIN_DIR = bin
 
 SRCS := $(wildcard $(SRC_DIR)/*.cpp)
 OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 
-TARGET = my_redis_server
+TARGET = $(BIN_DIR)/my_redis_cli
 
 all: $(TARGET)
 
-$(BUILD_DIR):
-	mkdir -p $(BUILD_DIR)
+$(BUILD_DIR) $(BIN_DIR):
+	mkdir -p $@
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(TARGET): $(OBJS)
+$(TARGET): $(OBJS) | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
 
 clean:
-	rm -rf $(BUILD_DIR) $(TARGET)
+	rm -rf $(BUILD_DIR) $(BIN_DIR)
 
 rebuild: clean all
 
