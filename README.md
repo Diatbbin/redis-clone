@@ -22,6 +22,8 @@ Run the server or client using
 
 In-memory key-value store
 
+# Implementation details
+
 Basic Redis commands support for Key value, List and Hash operations)
 
 RESP (REdis Serialization Protocol) parser and serializer
