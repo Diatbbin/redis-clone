@@ -21,7 +21,11 @@ Run the server or client using
 `./my_redis_server` or `./my_redis_cli`
 
 In-memory key-value store
+
 Basic Redis commands support for Key value, List and Hash operations)
+
 RESP (REdis Serialization Protocol) parser and serializer
+
 Socket-based client-server communication
+
 Thread-safe operations using std::mutex
