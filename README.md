@@ -1,4 +1,4 @@
-# redis-clone 
+# Build my own Redis Client and Server
 
 This project is built to learn about **Redis internals** and **socket programming in C++**.
 
@@ -24,7 +24,7 @@ In-memory key-value store
 
 # Implementation details
 
-Basic Redis commands support for Key value, List and Hash operations)
+Basic Redis commands support for Key value, List and Hash operations
 
 RESP (REdis Serialization Protocol) parser and serializer
 
